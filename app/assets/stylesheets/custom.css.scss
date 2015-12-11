@@ -1,0 +1,335 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Universal CSS for Blog Application */
+
+/* MIXINS, VARIABLES, ETC. */
+
+    /* Variables */
+    $gray-medium-light: #eaeaea;
+    /*mixin */
+    @mixin box_sizing {
+        -moz-box-sizing:    border-box;
+        -webkit-box_sizing: border-box;
+        box_sizing:         border-box;
+    }
+    /* miscellaneous */
+    .debug_dump {
+        clear: both;
+        float: center;
+        width: 60%;
+        margin-top: 105px;
+        margin-left: 200px;
+        position: center;
+        padding-left: 20px;
+        @include box_sizing;
+    }
+
+
+.gravatar {
+    float: left;
+    margin-right: 10px;
+}
+
+.gravatar_edit {
+    margin-top: 15px;
+}
+
+/* forms for signup */
+
+.myinputcontainer {
+    width: 50%;
+}
+
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing;
+}
+
+input {
+    height: auto !important;
+}
+
+.myjumbotron {
+    width: 90%;
+    padding: 5px;
+    background-color: transparent;
+    margin-left: 15%;
+    margin-right: 15%;
+    box-sizing: border-box;
+   -moz-box-sizing: border-box;
+}
+
+.mycontainer {
+    width: 75%;
+    padding: 10px;
+    padding-left: 200px;
+    padding-top: 5px;
+    position: relative;
+    background-color: transparent;
+/*    overflow: hidden; */
+}
+
+.checkbox {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    span{
+        margin-left: 20px;
+        font-weight: normal;
+    }
+}
+
+#session_remember_me {
+    width: auto;
+    margin-left: 0;
+}
+
+/* forms for styling error messages */
+
+#error_explanation {
+    color: red;
+    ul {
+        color: red;
+        margin: 0 0 30px 0;
+    }
+}
+
+/* .has-error is new */
+.field_with_errors {
+    @extend .has-error;
+    .form-control {
+        color: $state-danger-text;    
+    }
+}
+
+
+
+/* body elements */
+
+body {
+    padding-top: 60px;
+    padding-left: 0px;
+    background: linear-gradient(to top, rgba(0,200,0,0.3), rgba(155,0,211,0.3)) fixed;
+    /*background: linear-gradient(to top, rgba(0, 200, 0, 0.3), rgba(155, 0, 211, 0.3));*/
+}
+
+section {
+    overflow: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+.center {
+    text-align: center;
+}
+
+.center h1 {
+    margin-bottom: 10px;
+}
+
+//header redef//
+.nav {
+    margin: 0 auto;
+    display: inline-block;
+    width: 75%;
+    color: purple;
+    font-size: 12px;
+}
+
+.navbar-nav > li{
+  padding-left:0px;
+  padding-right:0px;
+  margin-left:-5px;
+  margin-right:-5px;
+}
+//header fix left side//
+.mytext {
+    margin: 0 auto;
+    padding-left: 25px;
+    padding-top: 9px;
+    padding-right: 2px;
+    color: rgb(155, 0, 211);
+    font-size: 16px;
+}
+
+//ul fixes//
+ul li a {
+    color:#9932CC;
+    display:block;
+    text-decoration:none;
+    padding:1px;
+    }
+ul {
+    list-style-type:none;
+    }
+li {
+    display:block;
+    }
+ul li a:hover {
+    color:#A9A9A9;
+    display:block;
+    text-decoration:none;
+    }
+li:hover {
+    background:rgba(0, 200, 0, 0.5);
+    }
+.active a {
+    color:#9932CC;
+    text-decoration:none;
+    }
+li a {
+    color:#ba55d3;
+    padding:5px;
+    display:block;
+    }
+li a:hover {
+    color:#fdf5e6;
+    background:#333;
+    text-decoration:none;
+}
+/*New stuff for footer links */
+
+
+footer {
+/*  margin-top: 45px; */
+/*  padding-top: 5px; */
+/*  clear: both; */
+  position:relative;
+  border-top: 1px solid #eaeaea;
+  color: #120012;
+  font-weight: bold;
+/*  background-color: rgba(218, 112, 214, 0.2); */
+  width: 650px;
+  margin-left: 20%;
+  margin-right: 30%;
+  margin-top: 2%;
+  align: right;
+  a {
+    color: #330033;
+    &:hover {
+        background:rgba(0, 200, 0, 0.8);
+        color: #000000;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+      a:hover {
+        color:rgb(155, 0, 211);
+        background:rgba(0, 200, 0, 0.8);
+        text-decoration:none;
+        font-weight: bold;
+}
+    }
+  }
+}
+
+/*New stuff for image*/
+img {
+    float: left;
+    margin: 0 10px 10px 10px;
+}
+
+/* typography */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+}
+
+.myh1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: left;
+    font-weight: bold;
+    color: #3D003D;
+}
+
+h2 {
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: left;
+    font-weight: bold;
+    color: #3D003D;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+}
+
+/* New stuff for sidebar Right */
+
+#mywrapper {
+    padding: 10px;
+}
+
+.mytext2 {
+    color: rgb(155, 0, 211);
+    font-size: 1.6em;
+    letter-spacing: -1px;
+    text-align: left;
+    font-weight: bold;
+  }
+/* make sidebar nav vertical */ 
+
+#sidebar {
+  height: 90%;
+  padding-right: 0;
+  padding-top: 0px;
+  padding-left: 20px;
+  width: 12%;
+  position: absolute;
+  background:#222;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  .nav {
+    width: 100%;
+  }
+  ul li a:hover {
+    color:#A9A9A9;
+    display:block;
+    text-decoration:none;
+    }
+}
+
+/* sidebar */
+
+aside {
+    section.user_info {
+        margin-top: 20px;
+    }
+    section {
+        padding: 10px 0;
+        margin-top: 20px;
+        &:first-child {
+            border: 0;
+            padding-top: 0;
+        }
+        span {
+            display: block;
+            margin-bottom: 3px;
+            line-height: 1;
+        }
+        h1 {
+            font-size: 1.4em;
+            letter-spacing: -1px;
+            margin-bottom: 3px;
+            margin-top: 0px;
+            text-align: left;
+            font-weight: bold;
+            color: #3D003D;
+        }
+    }
+}

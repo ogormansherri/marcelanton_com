@@ -1,0 +1,6 @@
+# a fixture for testing user login 
+
+sherri:
+  name: Sherri Example
+  email: sherri@example.com
+  password_digest: <%= User.digest('password') %>

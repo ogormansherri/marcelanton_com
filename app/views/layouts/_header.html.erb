@@ -1,0 +1,63 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><div class="mytext"><%= link_to "Marcel Anton Lounge", root_path %></div></li>
+          <% if logged_in? %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Account <b class="caret"></b>
+                </a>
+              <ul class="dropdown-menu">
+            <li><%= link_to "Profile", current_user %></li>
+            <li><%= link_to "Settings", '#' %></li>
+            <li><%= link_to "Account", '#' %></li>
+            <li><%= link_to "Users", '#' %></li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "Log in", login_path %>
+              <%= link_to "Log out", logout_path, method: "delete" %>
+            </li>
+          </ul>
+        </li>
+        <% else %>
+        <li><%= link_to "Log in", login_path %></li>
+      <% end %>
+            <li><%= link_to "Sign Up Now", signup_path %></li>
+            <li><%= link_to "About", about_path %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Music <b class="caret"></b>
+              </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Audio", '#' %></li>
+              <li><%= link_to "Video", '#' %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Upcoming Events", '#' %></li>
+            </ul></li>
+            <li><%= link_to "Calendar", '#' %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Social <b class="caret"></b>
+              </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Facebook", '#' %></li>
+              <li><%= link_to "Wordpress", '#' %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Youtube", '#' %></li>
+            </ul></li>
+            <li><%= link_to "Store", '#' %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Articles <b class="caret"></b>
+              </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "New Articles", '#' %></li>
+              <li><%= link_to "Archives", '#' %></li>
+              <li class="divider"></li>
+              <li><%= link_to "News", '#' %></li>
+            </ul></li>
+          </ul>
+        </nav>
+    </div>
+  </header>

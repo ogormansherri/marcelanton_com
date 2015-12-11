@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+      <%= render 'layouts/shim' %>
+  </head>
+
+  <body>
+    <div class="content"> 
+    
+      <%= render 'layouts/header' %>
+      <div class="large-3 large-pull-9 columns" id="sidebar" role="navigation">
+      <%= render 'layouts/sidebar' %>
+    </div>
+   
+    <div class="mywrapper"></div>
+
+      <!--NEW-->
+    <div class="large-9 large-pull-3 columns">
+    <div class="myjumbotron">
+    <!--blog logo and corrections here -->
+
+      <%= yield %>
+      
+      <% flash.each do |message_type, message| %>
+       <!-- <div class="alert alert-<%=message_type %>"><%= message %></div>-->
+       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
+      
+      <div class="row">
+        <%= render 'layouts/footer' %>
+      </div>
+
+    </div> <!--myjumbotron-->
+  </div> <!--content-->
+
+
+<%= debug(params) if Rails.env.development? %>  <!--does not display debug info to deployed users -->
+
+
+</div>
+</body>
+</html>
